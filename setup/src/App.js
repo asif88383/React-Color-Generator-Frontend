@@ -33,7 +33,7 @@ function App() {
             return <SingleColor
              key={index} 
              {...color} 
-             index={index}/>
+             index={index} hexColor={color.hex}/>
           })}
         </section>
       </section>
