@@ -6,7 +6,7 @@ import Values from 'values.js'
 function App() {
   const [color, setColor] = useState('');
   const [error, setError] = useState(false);
-  const [list, setList] = useState([]);
+  const [list, setList] = useState(new Values('#f15025').all(10));
 
   const handleChange = (e) => {
     e.preventDefault();
@@ -30,10 +30,13 @@ function App() {
         </form>
         <section className='colors'>
           {list.map((color, index) => {
-            return <SingleColor
-             key={index} 
-             {...color} 
-             index={index} hexColor={color.hex}/>
+            return (
+              <SingleColor
+              key={index} 
+              {...color} 
+              index={index} hexColor={color.hex} 
+              />
+            )
           })}
         </section>
       </section>
